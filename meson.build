@@ -9,9 +9,12 @@ sources = files(
   'src/main.cpp'
   )
 
+deps = [dependency('fmt')]
+
 exe = executable('dbms-cc', 
   sources,
   include_directories: headers,
+  dependencies: deps,
   install : true)
 
 test('basic', exe)
