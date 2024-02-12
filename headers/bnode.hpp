@@ -12,7 +12,7 @@ constexpr int BTREE_MAX_VAL_SIZE = 3000;
 
 }
 
-enum class BNODE_TYPE { BNODE_NODE, BNODE_LEAF };
+enum class BNODE_TYPE : uint16_t { BNODE_NODE, BNODE_LEAF };
 
 class BNode {
 public:
@@ -37,6 +37,8 @@ public:
 
     // node size in bytes
     uint16_t nbytes();
+
+    friend class BTree;
 
 private:
     uint8_t* data;
